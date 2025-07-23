@@ -14,28 +14,30 @@ import {
 } from 'react-native';
 import React from 'react';
 
-
 const App = () => {
-   const theme = useColorScheme();
+  const theme = useColorScheme();
   const isDarkMode = theme === 'dark';
 
-const backgroundColor = isDarkMode ? 'black' : 'white';
-const textColor = isDarkMode ? 'white' : 'black';
-const borderColor = isDarkMode ? 'lightgrey' : 'grey';
-const buttonBorderColor = isDarkMode ? 'white' : 'grey';
+  const backgroundColor = isDarkMode ? 'black' : 'white';
+  const textColor = isDarkMode ? 'white' : 'black';
+  const borderColor = isDarkMode ? 'lightgrey' : 'grey';
+  const buttonBorderColor = isDarkMode ? 'white' : 'grey';
+  const btntextColor = isDarkMode ? 'black' : 'teal';
   return (
-    <SafeAreaView style={[styles.container,{backgroundColor:backgroundColor}]}>
-      <Text style={[styles.text,{color:textColor}]}>Hi i'm Harsh</Text>
+    <SafeAreaView
+      style={[styles.container, { backgroundColor: backgroundColor }]}
+    >
+      <Text style={[styles.text, { color: textColor }]}>Hi i'm Harsh</Text>
 
       {/* Images are Here */}
       <Image
-        style={[styles.image,{borderColor:borderColor}]}
+        style={[styles.image, { borderColor: borderColor }]}
         source={{
           uri: 'https://images.unsplash.com/photo-1752350434901-e1754a4784fe?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8',
         }}
       />
       <Image
-        style={[styles.img2,{borderColor:borderColor}]}
+        style={[styles.img2, { borderColor: borderColor }]}
         source={{
           uri: 'https://images.unsplash.com/photo-1753012102486-e6fa2dd0558a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyOXx8fGVufDB8fHx8fA%3D%3D',
         }}
@@ -44,24 +46,28 @@ const buttonBorderColor = isDarkMode ? 'white' : 'grey';
       {/* Buttons are Here */}
 
       <TouchableOpacity
-        style={[styles.button,{borderColor: buttonBorderColor}]}
+        style={[styles.button, { borderColor: buttonBorderColor }]}
         onPress={() => Alert.alert('TouchableOpacity pressed!')}
       >
-        <Text style={styles.btnText}>TouchableOpacity</Text>
+        <Text style={[styles.btnText, { color: btntextColor }]}>
+          TouchableOpacity
+        </Text>
       </TouchableOpacity>
 
       <TouchableHighlight
-        style={[styles.button,{borderColor: buttonBorderColor}]}
+        style={[styles.button, { borderColor: buttonBorderColor }]}
         onPress={() => Alert.alert('TouchableHighlight pressed!')}
       >
-        <Text style={styles.btnText}>TouchableHighlight</Text>
+        <Text style={[styles.btnText, { color: btntextColor }]}>
+          TouchableHighlight
+        </Text>
       </TouchableHighlight>
 
       <Pressable
-        style={[styles.button,{borderColor: buttonBorderColor}]}
+        style={[styles.button, { borderColor: buttonBorderColor }]}
         onPress={() => Alert.alert('Pressable pressed!')}
       >
-        <Text style={styles.btnText}>Pressable</Text>
+        <Text style={[styles.btnText, { color: btntextColor }]}>Pressable</Text>
       </Pressable>
     </SafeAreaView>
   );
@@ -102,7 +108,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: 'wheat',
     fontSize: 20,
-    borderRadius: 50,
+    borderRadius: 20,
     padding: 20,
     borderWidth: 4,
     width: '50%',
@@ -110,7 +116,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 'auto',
   },
   btnText: {
-    color: 'black',
     fontSize: 19,
     fontWeight: '500',
   },
