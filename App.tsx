@@ -12,7 +12,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import React from 'react';
-import { ScrollView } from 'react-native/types_generated/index';
+
 
 const App = () => {
   return (
